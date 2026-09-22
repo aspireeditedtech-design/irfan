@@ -38,6 +38,34 @@
     card.addEventListener('focus', () => startPreview(card));
     card.addEventListener('blur', () => stopPreview(card));
   });
+  const aiFilmCard = $('.ai-film-card');
+  const aiFilmPreview = $('.ai-film-preview');
+  function stopAiFilmPreview() {
+    if (!aiFilmPreview) return;
+    aiFilmPreview.pause();
+    aiFilmCard.classList.remove('is-previewing');
+    try { aiFilmPreview.currentTime = 0; } catch (_) {}
+  }
+  function startAiFilmPreview() {
+    if (!aiFilmPreview || !canHover.matches || reducedMotion.matches || dialog.open) return;
+    const film = config.videos?.[6];
+    if (!film?.preview) return;
+    if (!aiFilmPreview.getAttribute('src')) aiFilmPreview.src = film.preview;
+    aiFilmPreview.muted = true;
+    try { aiFilmPreview.currentTime = 0; } catch (_) {}
+    const playing = aiFilmPreview.play();
+    if (playing?.then) playing.then(() => {
+      if (!dialog.open && (aiFilmCard.matches(':hover') || aiFilmCard.matches(':focus-visible'))) aiFilmCard.classList.add('is-previewing');
+      else stopAiFilmPreview();
+    }).catch(() => stopAiFilmPreview());
+  }
+  if (aiFilmCard) {
+    aiFilmCard.addEventListener('pointerenter', startAiFilmPreview);
+    aiFilmCard.addEventListener('pointerleave', stopAiFilmPreview);
+    aiFilmCard.addEventListener('focus', startAiFilmPreview);
+    aiFilmCard.addEventListener('blur', stopAiFilmPreview);
+  }
+
 
   if (config.email) {
     emailLink.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent('Video editing project inquiry');
@@ -50,6 +78,7 @@
     const video = config.videos?.[Number(card.dataset.video)];
     if (!video || dialog.open) return;
     heroCards.forEach(stopPreview);
+    stopAiFilmPreview();
     previouslyFocused = card;
     dialog.classList.toggle('landscape-dialog', Boolean(video.landscape));
     dialogTitle.textContent = video.title;

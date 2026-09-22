@@ -9,6 +9,7 @@ window.PORTFOLIO_CONFIG = {
     { title: 'Vegetables', subtitle: 'Explainer / Social', src: 'assets/videos/food-explainer.mp4', poster: 'assets/images/vegetables-preview.webp', preview: 'assets/previews/food-explainer.mp4' },
     { title: 'ANARC Watch', subtitle: 'Product Commercial', src: 'assets/videos/anarc-watch.mp4', poster: 'assets/images/anarc-watch.webp', preview: 'assets/previews/anarc-watch.mp4' },
     { title: 'NEWWN Cuts', subtitle: 'Product / Brand Film', src: 'assets/videos/newn-cuts.mp4', poster: 'assets/images/newn-cuts.webp', preview: 'assets/previews/newn-cuts.mp4' },
-    { title: 'Rape Case — Editing Breakdown', subtitle: 'Work Payoff / Editorial', src: 'assets/videos/work-payoff.mp4', poster: 'assets/images/work-payoff.webp', landscape: true }
+    { title: 'Rape Case — Editing Breakdown', subtitle: 'Work Payoff / Editorial', src: 'assets/videos/work-payoff.mp4', poster: 'assets/images/work-payoff.webp', landscape: true },
+    { title: 'Dettol — AI Ad Film', subtitle: 'AI Ads / Brand Film', src: 'assets/videos/dettol-ai-ad.mp4', poster: 'assets/images/dettol-ai-ad.webp', preview: 'assets/previews/dettol-ai-ad.mp4', landscape: true }
   ]
 };

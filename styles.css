@@ -167,3 +167,41 @@
   .hero-chip{left:1%;top:405px}
   .note-right{top:105px}
 }
+
+/* V6 — software strip beneath Work Payoff; supplied About Me; cinematic AI films. */
+.toolkit{margin-top:72px}
+.toolkit-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}
+.toolkit-heading h3{font-size:clamp(26px,3vw,40px);letter-spacing:-.055em;line-height:1.15;margin:12px 0 0;color:#f6f5ff}
+.toolkit-heading h3 em{font-family:Georgia,serif;font-weight:400;color:#b4a0ff}
+.toolkit-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.tool-card{min-width:0;min-height:84px;display:flex;align-items:center;gap:11px;padding:12px 10px;border:1px solid #6672838c;background:#101823;border-radius:11px;transition:border-color .2s ease,transform .2s ease,background .2s ease}
+.tool-card:hover{transform:translateY(-3px);border-color:#b6a4e6;background:#171c2d}
+.tool-icon{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:6px;font-size:21px;font-weight:850;line-height:1}
+.tool-icon.pr{background:#171069;color:#c5c0ff}.tool-icon.ae{background:#2a183c;color:#d9b4ff;border:1px solid #bd6be5}
+.tool-icon.ps{background:#061f34;color:#75d1ff;border:1px solid #34bafa}.tool-icon.au{background:#231038;color:#e4a5ff;border:1px solid #bc5af7}
+.tool-icon.resolve{background:#092318;color:#90ff8e;border:1px solid #60f75d}.tool-icon.frame{background:#181332;color:#d0afff;border:1px solid #ab73ef}
+.tool-body{min-width:0;display:grid;gap:7px}
+.tool-body strong{font-size:12px;color:#f3f5fc;line-height:1.3;white-space:normal}
+.tool-rating{color:#ffcf42;letter-spacing:-.09em;font-size:14px;line-height:1}
+.ai-films{background:radial-gradient(ellipse at 68% 18%,#2a2441 0%,transparent 55%),linear-gradient(180deg,#0c0e17,#0a0c13);padding-top:105px}
+.ai-heading{margin-bottom:34px}
+.ai-film-card{display:block;position:relative;isolation:isolate;width:100%;aspect-ratio:16/7.8;border-radius:25px;overflow:hidden;color:#fff;text-align:left;background:#11141d;border:1px solid #a999ce65;cursor:pointer;box-shadow:0 30px 90px #0008;transition:border-color .3s ease,transform .3s ease,box-shadow .3s ease;padding:0}
+.ai-film-card:hover,.ai-film-card:focus-visible{border-color:#e2caff;transform:translateY(-5px);box-shadow:0 33px 85px #b87cff20}
+.ai-film-card>img,.ai-film-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:brightness(.8) saturate(.94)}
+.ai-film-card>img{transition:transform .6s ease}.ai-film-card:hover>img{transform:scale(1.035)}
+.ai-film-preview{opacity:0;z-index:1;transition:opacity .25s ease;pointer-events:none}
+.ai-film-card.is-previewing .ai-film-preview{opacity:1}
+.ai-film-vignette{position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(0deg,#07070ce8,transparent 63%),linear-gradient(90deg,#07070c72,transparent 55%)}
+.ai-film-label{position:absolute;z-index:3;left:33px;top:30px;font-size:10px;letter-spacing:.19em;font-weight:800;color:#ede7ff;display:flex;gap:10px;align-items:center}
+.ai-film-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#d8a2ff;box-shadow:0 0 17px #bd81fc}
+.ai-film-play{position:absolute;z-index:3;top:49%;left:50%;transform:translate(-50%,-50%);border:1px solid #fff9;width:80px;height:80px;border-radius:100%;display:grid;place-items:center;padding-left:6px;background:#0909118a;backdrop-filter:blur(12px);font-size:26px;transition:transform .25s ease,background .25s ease,color .25s ease}
+.ai-film-card:hover .ai-film-play,.ai-film-card:focus-visible .ai-film-play{transform:translate(-50%,-50%) scale(1.08);color:#090b12;background:#fff}
+.ai-film-caption{position:absolute;z-index:3;bottom:35px;left:35px;right:35px;display:flex;align-items:end;justify-content:space-between;gap:14px}
+.ai-film-caption strong{display:block;font-size:clamp(25px,3.2vw,44px);letter-spacing:-.055em;line-height:1.12;margin-bottom:12px}
+.ai-film-caption small{color:#e3dae8;font-size:10px;letter-spacing:.16em;font-weight:800}
+.ai-film-watch{border-bottom:1px solid #ddd5fa;padding-bottom:10px;white-space:nowrap;font-size:11px;letter-spacing:.15em;font-weight:800}
+.about-highlight{font-weight:800;color:#ffd34e}
+.about-copy p{overflow-wrap:break-word}
+@media(max-width:1200px){.toolkit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){.toolkit{margin-top:48px}.toolkit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-films{padding-top:60px}.ai-film-card{aspect-ratio:4/4.4;border-radius:18px}.ai-film-label{left:20px;top:20px;font-size:9px}.ai-film-caption{left:20px;right:20px;bottom:24px}.ai-film-caption small{font-size:8px;letter-spacing:.10em}.ai-film-play{width:62px;height:62px;font-size:19px}.ai-film-watch{display:none}}
+@media(max-width:480px){.toolkit-grid{gap:9px}.tool-card{min-height:76px;padding:10px 8px;gap:8px}.tool-icon{width:34px;height:34px;flex-basis:34px;font-size:17px}.tool-body strong{font-size:11px}.tool-rating{font-size:12px}.ai-film-caption strong{font-size:25px}.ai-film-card{aspect-ratio:4/5.3}}

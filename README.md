@@ -27,3 +27,10 @@ Bengaluru, India • Open to Remote / Relocation
 4. After GitHub finishes deploying, reload with Ctrl+Shift+R to avoid cached old CSS.
 
 Edit `site-config.js` to update phone, email, Instagram and video paths. Keep the asset filenames and folders when uploading.
+
+## V6 updates
+- Software/toolkit skills strip placed immediately beneath the Work Payoff video: Premiere Pro, After Effects, Photoshop, Audition, DaVinci Resolve and Frame.io.
+- About Me copy and portfolio view/project figures reproduced from the supplied screenshot.
+- Added a cinematic AI Ads & Films feature with the supplied Dettol video, an optimized browser-friendly MP4, poster, silent hover preview and sound-on modal player.
+- Five original 9:16 hero reels, contact information, experience section and background preserved.
+- No external video hosts or npm install required: upload *all* extracted files, including `assets/`, to the repository root.
