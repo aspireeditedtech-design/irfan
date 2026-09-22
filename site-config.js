@@ -1,7 +1,7 @@
 /* EDIT THIS FILE to personalize your portfolio. No build tools required. */
 window.PORTFOLIO_CONFIG = {
-  email: 'aspireedit.edtech@gmail.com',
-  youtube: 'https://www.youtube.com/@aasil_khan_',
+  email: 'irfanraza055@gmail.com',
+  youtube: 'https://instagram.com/edit_aspire',
   videos: [
     { title: 'Chandrasekhar', subtitle: 'Documentary / Explainer', src: 'assets/videos/chandrasekhar.mp4', poster: 'assets/images/chandrasekhar-preview.webp', preview: 'assets/previews/chandrasekhar.mp4' },
     { title: 'Dhondo Keshav Karve', subtitle: 'Documentary / History', src: 'assets/videos/dhondo-karve.mp4', poster: 'assets/images/dhondo-karve.webp', preview: 'assets/previews/dhondo-karve.mp4' },
