@@ -7,7 +7,7 @@
   const dialogTitle = $('#dialog-title');
   const closeButton = $('#close-dialog');
   const emailLink = $('#email-link');
-  const youtubeLink = $('#youtube-link');
+  const phoneLink = $('#phone-link');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let previouslyFocused = null;
   let playbackTimeout = 0;
@@ -41,9 +41,9 @@
 
   if (config.email) {
     emailLink.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent('Video editing project inquiry');
-    $('#email-text').textContent = config.email;
+    $('#email-text').textContent = config.email + ' · +91 ' + (config.phone || '7717777075');
   }
-  if (config.youtube) youtubeLink.href = config.youtube;
+  if (config.phone && phoneLink) phoneLink.href = 'tel:+91' + config.phone;
   $('#year').textContent = new Date().getFullYear();
 
   function openVideo(card) {
