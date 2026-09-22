@@ -1,40 +1,28 @@
-# Video Editor Portfolio — GitHub Pages ready
+# Video Editing Portfolio — V3 GitHub Pages fix
 
-A static, responsive, cinematic video-editor portfolio with five **real** supplied reels, subtle card wiggle, a 30%-opacity portrait in the hero, center-expanding playback and a blurred backdrop. No React, backend, build step or paid hosting needed.
+The cinematic V2 layout and 30%-opacity hero portrait are retained, with a responsive headline fix and smaller poster images. All 5 hero reels (silent hover previews + audible click-to-watch) and the standalone Work Payoff video are included.
+
+## IMPORTANT: How to upload without the GitHub loading/404 error
+
+**This ZIP deliberately has `index.html` at the ZIP ROOT, not inside a nested `video-editor-portfolio-v3-fixed/` folder.**
+
+1. Download ZIP and extract it to your computer. **Do not upload the ZIP itself to the GitHub repository.**
+2. Open the *contents* of the extracted folder, select `index.html`, `styles.css`, `script.js`, `site-config.js`, `.nojekyll` and the whole `assets` folder; upload them into the **repository root** (top level). In GitHub's file list, you should see `index.html` directly, not inside another folder. Some systems hide `.nojekyll`; its absence is usually fine for this site.
+3. If updating an older V2 version, **replace existing files** (do not add a second V3 subfolder). Keep the `assets/images/`, `assets/videos/`, and `assets/previews/` directory names unchanged. Delete obsolete `chandrasekhar-preview.png` and `vegetables-preview.png` if desired; V3 uses WebP.
+4. Go to **Settings > Pages > Build and deployment**. Select **Deploy from a branch**, choose the publishing branch (`main` if that is your default branch), and **/(root)**, then Save. If GitHub Pages is configured to use a different branch, upload the files there or update the Pages setting accordingly.
+5. Find the **Visit site** link on the Pages settings page. A project repository usually publishes at `https://USERNAME.github.io/REPOSITORY-NAME/`, not just `https://USERNAME.github.io/`. Wait for GitHub's Pages deployment to finish, then force-refresh (Ctrl+Shift+R / Cmd+Shift+R).
+
+**If the page is blank / says 404:** check `index.html` is at the root, Pages points to the uploaded branch + root, the repository is public if your GitHub plan requires it, and the browser URL includes the repository name. GitHub filename case matters: `assets/videos/...` is not the same as `Assets/Videos/...`. **If just the videos show load errors:** verify that all six MP4s and all five silent previews were uploaded, not just the top-level HTML files. Individual files are below 6 MB.
+
+**If you still get an error:** send the actual GitHub Pages URL or the full error screenshot so the exact deployment issue can be identified; a ZIP fix cannot resolve a misconfigured or incomplete remote upload by itself.
 
 ## Files
 
-- `index.html` — all page content and reel cards
-- `styles.css` — visual design, subtle animation, responsive layout, hero image opacity
-- `script.js` — play/close animation, menu, navigation and UI behavior
-- `site-config.js` — contact email, YouTube link, video titles/filenames
-- `assets/images/` — compressed photo, reel posters and preview image
-- `assets/videos/` — five compressed, browser-ready MP4 videos, all under 100 MB each
+- `index.html` main site
+- `styles.css` cinematic look, reel wobble and clipping fix
+- `script.js` interaction, silent hover preview and modal player
+- `site-config.js` update contact/video links
+- `assets/images/`, `assets/videos/`, `assets/previews/` all media
+- `.nojekyll` keeps Pages from processing the static site with Jekyll
 
-## Put it online using GitHub Pages
-
-1. **UNZIP** `video-editor-portfolio.zip` on your computer. Do not upload only the ZIP into the repository; upload its **contents**.
-2. Sign in to GitHub and create a **Public** repository, such as `video-editor-portfolio`.
-3. Choose **Add file → Upload files**. Drag in the unzipped files **and `assets` folder**, keeping the same folder structure. `index.html` must be at the repo root. Commit.
-4. In the repo, go to **Settings → Pages → Build and deployment → Source: Deploy from a branch → main → /(root)**, then save.
-5. GitHub will display the website URL, normally `https://YOUR-USERNAME.github.io/video-editor-portfolio/`. Wait a few minutes for publication.
-
-Alternatively, name the repository `YOUR-USERNAME.github.io` to publish at `https://YOUR-USERNAME.github.io/`.
-
-## Personalize
-
-- In `site-config.js`, update `email`, `youtube`, video names, and video paths.
-- In `index.html`, change headline, About text, services and titles. **Ensure titles on hero cards and work grid match your new videos.**
-- In `styles.css`, `.hero-photo` has `opacity:.30`. Change it only if you want your portrait brighter/dimmer.
-- Swap `assets/images/editor.webp` to change your portrait; keep the filename or update CSS.
-- Add more videos to `assets/videos/`, register them in `site-config.js`, then add a matching card with its `data-video` index in `index.html`.
-
-## Check locally
-
-Run `python -m http.server 8000` in the unzipped folder and open `http://localhost:8000`. Opening `index.html` directly generally works too, but a local server better mirrors GitHub Pages.
-
-## Notes
-
-These are *web-optimized copies* of the supplied files (720 × 1280 H.264/AAC; originals remain yours). The audio stays in the videos. MP4 bytes are served by GitHub Pages (not Git LFS), avoiding GitHub's 100 MB per-file upload restriction. Browser playback requires one click; the dialog can be closed with Escape, outside click, or ✕. On mobile the hero reels swipe horizontally. Motion is reduced for users who request reduced motion.
-
-Fonts are loaded from Google Fonts when available, with system-font fallbacks. There are no other third-party assets or dependencies.
+**Local test:** open `index.html` directly or run `python -m http.server 8000` from this directory and visit `http://localhost:8000/`.

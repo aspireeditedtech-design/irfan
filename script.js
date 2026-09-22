@@ -11,6 +11,33 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let previouslyFocused = null;
   let playbackTimeout = 0;
+  const heroCards = [...document.querySelectorAll('.reel-card')];
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  // All five reel cards preview from 0:00 with no sound; clicking opens the full film WITH sound.
+  function stopPreview(card) {
+    const preview = card.querySelector('.reel-preview');
+    if (!preview) return;
+    preview.pause();
+    card.classList.remove('is-previewing');
+    try { preview.currentTime = 0; } catch (_) {}
+  }
+  function startPreview(card) {
+    if (!canHover.matches || reducedMotion.matches || dialog.open) return;
+    const video = config.videos?.[Number(card.dataset.video)];
+    const preview = card.querySelector('.reel-preview');
+    if (!video?.preview || !preview) return;
+    if (!preview.getAttribute('src')) preview.src = video.preview;
+    preview.muted = true;
+    preview.currentTime = 0;
+    const playing = preview.play();
+    if (playing?.then) playing.then(() => { if (!dialog.open && (card.matches(':hover') || card.matches(':focus-visible'))) card.classList.add('is-previewing'); else stopPreview(card); }).catch(() => stopPreview(card));
+  }
+  heroCards.forEach(card => {
+    card.addEventListener('pointerenter', () => startPreview(card));
+    card.addEventListener('pointerleave', () => stopPreview(card));
+    card.addEventListener('focus', () => startPreview(card));
+    card.addEventListener('blur', () => stopPreview(card));
+  });
 
   if (config.email) {
     emailLink.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent('Video editing project inquiry');
@@ -22,9 +49,12 @@
   function openVideo(card) {
     const video = config.videos?.[Number(card.dataset.video)];
     if (!video || dialog.open) return;
+    heroCards.forEach(stopPreview);
     previouslyFocused = card;
+    dialog.classList.toggle('landscape-dialog', Boolean(video.landscape));
     dialogTitle.textContent = video.title;
     player.poster = video.poster;
+    player.currentTime = 0;
     player.src = video.src;
     player.setAttribute('aria-label', video.title + ', ' + video.subtitle);
     dialog.showModal();
@@ -49,6 +79,7 @@
     clearTimeout(playbackTimeout);
     dialog.close();
     dialog.classList.remove('is-visible');
+    dialog.classList.remove('landscape-dialog');
     document.body.classList.remove('modal-open');
     player.removeAttribute('src');
     player.load(); // Free video memory when the dialog is closed.
