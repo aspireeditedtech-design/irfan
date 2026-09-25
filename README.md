@@ -34,3 +34,6 @@ Edit `site-config.js` to update phone, email, Instagram and video paths. Keep th
 - Added a cinematic AI Ads & Films feature with the supplied Dettol video, an optimized browser-friendly MP4, poster, silent hover preview and sound-on modal player.
 - Five original 9:16 hero reels, contact information, experience section and background preserved.
 - No external video hosts or npm install required: upload *all* extracted files, including `assets/`, to the repository root.
+
+## V7 update — Showreel
+A dedicated 16:9 **Irfan Raza — Showreel 2026** section has been added directly after the Work Payoff feature and before the creative toolkit. The showreel previews silently on desktop hover and opens in the focused video modal on click.
