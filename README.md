@@ -34,3 +34,7 @@ Edit `site-config.js` to update phone, email, Instagram and video paths. Keep th
 - Added a cinematic AI Ads & Films feature with the supplied Dettol video, an optimized browser-friendly MP4, poster, silent hover preview and sound-on modal player.
 - Five original 9:16 hero reels, contact information, experience section and background preserved.
 - No external video hosts or npm install required: upload *all* extracted files, including `assets/`, to the repository root.
+
+## V7 updates
+- Added a **Long Format** section right after Work Payoff (and the toolkit strip), before AI Ads & Films, with the YouTube video `043qBi8qw-Q` embedded (privacy-friendly youtube-nocookie player, lazy loaded, 16:9, responsive).
+- To swap the video later, change the ID in the iframe `src` inside the `#long-format` section of `index.html`.
