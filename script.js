@@ -67,6 +67,35 @@
   }
 
 
+  const showreelCard = $('.showreel-card');
+  const showreelPreview = $('.showreel-preview');
+  function stopShowreelPreview() {
+    if (!showreelPreview) return;
+    showreelPreview.pause();
+    showreelCard.classList.remove('is-previewing');
+    try { showreelPreview.currentTime = 0; } catch (_) {}
+  }
+  function startShowreelPreview() {
+    if (!showreelPreview || !canHover.matches || reducedMotion.matches || dialog.open) return;
+    const film = config.videos?.[9];
+    if (!film?.preview) return;
+    if (!showreelPreview.getAttribute('src')) showreelPreview.src = film.preview;
+    showreelPreview.muted = true;
+    try { showreelPreview.currentTime = 0; } catch (_) {}
+    const playing = showreelPreview.play();
+    if (playing?.then) playing.then(() => {
+      if (!dialog.open && (showreelCard.matches(':hover') || showreelCard.matches(':focus-visible'))) showreelCard.classList.add('is-previewing');
+      else stopShowreelPreview();
+    }).catch(() => stopShowreelPreview());
+  }
+  if (showreelCard) {
+    showreelCard.addEventListener('pointerenter', startShowreelPreview);
+    showreelCard.addEventListener('pointerleave', stopShowreelPreview);
+    showreelCard.addEventListener('focus', startShowreelPreview);
+    showreelCard.addEventListener('blur', stopShowreelPreview);
+  }
+
+
   if (config.email) {
     emailLink.href = 'mailto:' + config.email + '?subject=' + encodeURIComponent('Video editing project inquiry');
     $('#email-text').textContent = config.email + ' · +91 ' + (config.phone || '7717777075');
@@ -79,6 +108,7 @@
     if (!video || dialog.open) return;
     heroCards.forEach(stopPreview);
     stopAiFilmPreview();
+    stopShowreelPreview();
     previouslyFocused = card;
     dialog.classList.toggle('landscape-dialog', Boolean(video.landscape));
     dialogTitle.textContent = video.title;

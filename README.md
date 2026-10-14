@@ -38,3 +38,11 @@ Edit `site-config.js` to update phone, email, Instagram and video paths. Keep th
 ## V7 updates
 - Added a **Long Format** section right after Work Payoff (and the toolkit strip), before AI Ads & Films, with the YouTube video `043qBi8qw-Q` embedded (privacy-friendly youtube-nocookie player, lazy loaded, 16:9, responsive).
 - To swap the video later, change the ID in the iframe `src` inside the `#long-format` section of `index.html`.
+
+## V8 updates
+- Hero reels increased from 5 to 7: **Tech Experiment (smartwatch test)** added as the first reel and **Infinity Admission** added as the last reel. Both have a compressed full video, silent hover preview and poster, wired into `site-config.js` (entries 7 and 8).
+- Desktop shows all 7 reels in one row; tablet and mobile use the swipe carousel.
+- To rename a reel, edit its title/subtitle in `index.html` (hero card) and `site-config.js` (player title).
+
+## V9 updates
+- Added a **Showreel** section directly below AI Ads & Films: 16:9 feature card with silent hover preview; click opens the full showreel (with sound) in the landscape player. The 98 MB master was re-encoded to a ~8 MB 1080p MP4 for fast loading on GitHub Pages (`assets/videos/showreel.mp4`).

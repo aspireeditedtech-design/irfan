@@ -10,6 +10,9 @@ window.PORTFOLIO_CONFIG = {
     { title: 'ANARC Watch', subtitle: 'Product Commercial', src: 'assets/videos/anarc-watch.mp4', poster: 'assets/images/anarc-watch.webp', preview: 'assets/previews/anarc-watch.mp4' },
     { title: 'NEWWN Cuts', subtitle: 'Product / Brand Film', src: 'assets/videos/newn-cuts.mp4', poster: 'assets/images/newn-cuts.webp', preview: 'assets/previews/newn-cuts.mp4' },
     { title: 'Rape Case — Editing Breakdown', subtitle: 'Work Payoff / Editorial', src: 'assets/videos/work-payoff.mp4', poster: 'assets/images/work-payoff.webp', landscape: true },
-    { title: 'Dettol — AI Ad Film', subtitle: 'AI Ads / Brand Film', src: 'assets/videos/dettol-ai-ad.mp4', poster: 'assets/images/dettol-ai-ad.webp', preview: 'assets/previews/dettol-ai-ad.mp4', landscape: true }
+    { title: 'Dettol — AI Ad Film', subtitle: 'AI Ads / Brand Film', src: 'assets/videos/dettol-ai-ad.mp4', poster: 'assets/images/dettol-ai-ad.webp', preview: 'assets/previews/dettol-ai-ad.mp4', landscape: true },
+    { title: 'Tech Experiment — Smartwatch Test', subtitle: 'Tech / Social', src: 'assets/videos/smartwatch-test.mp4', poster: 'assets/images/smartwatch-test.webp', preview: 'assets/previews/smartwatch-test.mp4' },
+    { title: 'Infinity Admission', subtitle: 'Education / Brand', src: 'assets/videos/infinity-admission.mp4', poster: 'assets/images/infinity-admission.webp', preview: 'assets/previews/infinity-admission.mp4' },
+    { title: 'Irfan Raza — Showreel', subtitle: 'Showreel / Selected Work', src: 'assets/videos/showreel.mp4', poster: 'assets/images/showreel.webp', preview: 'assets/previews/showreel.mp4', landscape: true }
   ]
 };
